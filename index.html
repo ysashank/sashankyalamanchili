@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+<head class="unselectable">
     <title>Sashank Yalamanchili</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -33,6 +33,7 @@
         img {
             width: 100%;
             height: auto;
+            pointer-events: none;
         }
 
         /* mouse over link */
@@ -44,17 +45,27 @@
         a:active {
             color: black;
         }
+
+        .unselectable {
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            color: #cc0000;
+        }
     </style>
 </head>
 
-<body>
+<body oncontextmenu="return false;" class="unselectable">
     <div class="w3-row">
         <div class="w3-container w3-half"><img src="Profile Picture.jpg"></div>
         <div class="w3-container w3-half">
             <h1>Hi,</h1>
             <p1>I am <br><b>Sashank</b> Yalamanchili.</p1>
             <p>I like breaking down complex things to make them easy and convenient.</p>
-            <p>Currently, I am in Berlin working as Integrations Manager with <a href="http://www.on-running.com">On Running</a>.</p>
+            <p>Currently, I am in Berlin working as Integrations Manager with <a href="http://www.on-running.com">On
+                    Running</a>.</p>
             <p>For fun, I enjoy making travel videos which can be found at my YouTube channel called <a
                     href="http://www.youtube.com/shankyshow">Shankyshow</a>.</p>
         </div>

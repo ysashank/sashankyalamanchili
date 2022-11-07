@@ -6,6 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 14px;
+        }
+
+        /* For mobile phones: */
+        [class*="col-"] {
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 768px) {
+
+            /* For desktop: */
+            .col-1 {
+                width: 40%;
+            }
+
+            .col-2 {
+                width: 60%;
+            }
+        }
+
+
         h1 {
             font-family: Helvetica, sans-serif;
             color: #595959;
@@ -24,7 +57,6 @@
 
         p {
             font-family: Helvetica, sans-serif;
-            font-size: 21px;
             text-align: default;
             color: #595959;
             font-weight: lighter;
@@ -32,8 +64,10 @@
 
         img {
             width: 100%;
+            max-width: 490px;
             height: auto;
             pointer-events: none;
+            border-radius: 7pt;
         }
 
         /* mouse over link */
@@ -52,21 +86,31 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
-            color: #cc0000;
         }
     </style>
 </head>
 
 <body oncontextmenu="return false;" class="unselectable">
-    <div class="w3-row">
-        <div class="w3-container w3-half"><img src="Profile Picture.jpg"></div>
-        <div class="w3-container w3-half">
-            <h1>Hi,</h1>
-            <p1>I am <br><b>Sashank</b> Yalamanchili.</p1>
-            <p>I like breaking complex things down to make them easy and convenient.</p>
-            <p>I help lean teams to simplify and automate their business processes by architecting fit-for-purpose solutions.</p>
-            <p>For fun, I enjoy making travel videos which can be found at my YouTube channel called <a
-                    href="http://www.youtube.com/shankyshow">Shankyshow</a>.</p>
+    <div class="row" style="margin-left: 14px; margin-right: 14px;">
+        <div class="col-1">
+            <div class="w3-container" style="border-radius: 7pt; margin-top: 14px;"><img src="Profile Picture.jpg">
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="row" style="background-color: #fafafa; border-radius: 7pt; padding: 14px; margin-top: 14px;">
+                <h1>Hi,</h1>
+                <p1>I am <b>Sashank</b> Yalamanchili.</p1>
+            </div>
+            <div class="row" style="background-color: #fafafa; border-radius: 7pt; padding: 14px; margin-top: 14px;">
+                <p>I help lean teams to simplify and automate their business processes by breaking down complex
+                    work flows into their simplest forms and strategically architect their solutions.</p>
+            </div>
+            <div class="row" style="background-color: #fafafa; border-radius: 7pt; padding: 14px; margin-top: 14px;">
+                <p>
+                    For fun, I enjoy making travel videos which can be found at my YouTube channel called <a
+                        href="https://www.youtube.com/shankyshow" target="_blank">Shankyshow</a>.
+                </p>
+            </div>
         </div>
     </div>
 </body>

@@ -6,14 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
-        h1 {
-            font-family: Helvetica, sans-serif;
-            color: #595959;
-            text-align: default;
-            font-size: 77px;
-            font-weight: lighter;
-        }
-
         p1 {
             font-family: Helvetica, sans-serif;
             font-size: 35px;
@@ -37,24 +29,31 @@
             margin-bottom: 7px;
         }
 
-        img {
+        .photo {
+            text-align: center;
+        }
+
+        .photo img {
             width: 100%;
-            min-width: 210px;
-            max-width: 280px;
+            min-width: 140px;
+            max-width: 140px;
             height: auto;
             pointer-events: none;
             border-radius: 7pt;
-            /*box-shadow: 0px 2.1px 3.5px #595959; */
+        }
+
+        a {
+            text-decoration: none;
         }
 
         /* mouse over link */
         a:hover {
-            color: grey;
+            text-decoration: underline;
         }
 
         /* selected link */
         a:active {
-            color: black;
+            color: gray;
         }
 
         .unselectable {
@@ -69,17 +68,15 @@
 
 <body oncontextmenu="return false;" class="unselectable">
     <div class="w3-row" style="margin-left: 14px; margin-right: 14px;">
-        <div class="w3-container w3-third">
+        <div class="w3-container w3-third photo">
             <div class="w3-container" style="border-radius: 7pt; margin-top: 14px;"><img src="Profile Picture.jpg">
             </div>
         </div>
         <div class="w3-container w3-twothird">
             <div class="w3-container"
                 style="background-color: #fafafa; border-radius: 7pt; padding: 14px; margin-top: 14px;">
-                <h1>Hi,</h1>
-                <p1>I am <b>Sashank</b> Yalamanchili.</p1>
-                <p>I help lean teams to simplify and automate their business processes by breaking down complex
-                    work flows into their simplest forms and strategically architect their solutions.</p>
+                <p1>I like making things easy.</p1>
+                <p><i>- <b>Sashank</b> Yalamanchili</i></p>
             </div>
         </div>
     </div>
@@ -108,7 +105,7 @@
                 <p><b>Founded</b> Mappstack LLC, Delaware, United States.<br>
                     Designed a no-code data mapping SaaS platform. Orchestrated the entire infrastructure on AWS
                     to
-                    implement a pay-as-you-go model and forward to costs to the users.</p>
+                    implement a pay-as-you-go model and forward to costs to the customers.</p>
                 <p><b>Managed</b> the <b>Integrations team</b> globally at On AG, Berlin, Germany.<br>
                     Introduced integration and automation solutions for the young Swiss based startup undergoing
                     an
@@ -127,9 +124,7 @@
                     as an external contractor for a variety or projects at large corporations such as GE
                     Aviation,
                     Faurecia and etc. between 2010 to 2015.</p>
-                <p>Please refer to LinkedIn profile for detailed work history here: <a
-                        href="https://www.linkedin.com/in/sashankyalamanchili"
-                        target="_blank">https://www.linkedin.com/in/sashankyalamanchili</a>.
+                <p><a href="https://www.linkedin.com/in/sashankyalamanchili" target="_blank">Learn More</a> >
                 </p>
             </div>
         </div>
@@ -161,10 +156,9 @@
             </div>
         </div>
     </div>
-    <div class="w3-row" style="margin: 14px; border-radius: 7pt; background-color: #fafafa;">
-        <p style="margin-left: 14px;">
-            For fun, I enjoy making travel videos which can be found at my YouTube channel called <a
-                href="https://www.youtube.com/shankyshow" target="_blank">Shankyshow</a>.
+    <div class="w3-row" style="margin: 14px;">
+        <p>
+            < <a href="/">Overview</a>
         </p>
     </div>
 </body>

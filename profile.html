@@ -35,8 +35,7 @@
 
         .photo img {
             width: 100%;
-            min-width: 161px;
-            max-width: 210px;
+            max-width: 259px;
             height: auto;
             pointer-events: none;
             border-radius: 7pt;
@@ -46,12 +45,10 @@
             text-decoration: none;
         }
 
-        /* mouse over link */
         a:hover {
             text-decoration: underline;
         }
 
-        /* selected link */
         a:active {
             color: gray;
         }
@@ -62,6 +59,44 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+        }
+
+        @media only screen and (max-width: 706px) {
+
+            .photo img {
+                width: 100%;
+                min-width: 182px;
+            }
+
+            .call-firstRow {
+                display: none;
+            }
+        }
+
+        @media only screen and (min-width: 706px) {
+            .call-firstRow {
+                display: none;
+            }
+
+            .photo img {
+                width: 100%;
+                max-width: 126px;
+            }
+        }
+
+        @media only screen and (min-width: 1000px) {
+            .photo img {
+                width: 100%;
+                max-width: 259px;
+            }
+
+            .call-secondRow {
+                display: none;
+            }
+
+            .call-firstRow {
+                display: block;
+            }
         }
     </style>
 </head>
@@ -78,11 +113,20 @@
                 <p1>I like making things easy.</p1>
                 <p><i>- <b>Sashank</b> Yalamanchili</i></p>
             </div>
-            <div class="w3-container"
+            <div class="w3-container call-firstRow"
                 style="background-color: #fafafa; border-radius: 7pt; padding: 14px; margin-top: 14px;">
-                <p style="color: #007AFF;"><a href="https://calendly.com/sashankyalamanchili" target="_blank">Book a
-                        free consultation</a> >
+                <p><b>Accepting new projects</b></p>
+                <p style="color: #007AFF;"><a href="https://calendly.com/sashankyalamanchili" target="_blank">Schedule a
+                        call</a> ></p>
             </div>
+        </div>
+    </div>
+    <div class="w3-row call-secondRow" style="margin-left: 14px; margin-right: 14px;">
+        <div class="w3-container call-secondRow"
+            style="background-color: #fafafa; border-radius: 7pt; padding: 14px; margin-top: 14px;">
+            <p><b>Accepting new projects</b></p>
+            <p style="color: #007AFF;"><a href="https://calendly.com/sashankyalamanchili" target="_blank">Schedule a
+                    call</a> ></p>
         </div>
     </div>
     <div class="w3-row" style="margin-left: 14px; margin-right: 14px;">
@@ -110,7 +154,9 @@
                 <p><b>Founded</b> Mappstack LLC, Delaware, United States.<br>
                     Designed a no-code data mapping SaaS platform. Orchestrated the entire infrastructure on AWS
                     to
-                    implement a pay-as-you-go model and forward to costs to the customers.</p>
+                    implement a pay-as-you-go model and forward to costs to the customers. <span
+                        style="color: #00AB8E;"><a href="https://mappstack.com" target="_blank">See Mappstack</a>
+                        ></span></p>
                 <p><b>Managed</b> the <b>Integrations team</b> globally at On AG, Berlin, Germany.<br>
                     Introduced integration and automation solutions for the young Swiss based startup undergoing
                     an

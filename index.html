@@ -86,7 +86,7 @@
             }
 
             .photo img {
-                width: 420px;
+                width: 350px;
                 height: auto;
             }
         }
@@ -137,6 +137,32 @@
                 height: auto;
             }
         }
+
+        #sashank:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        #sashank:after {
+            content: "Sashank";
+        }
+
+        #sashank:active:after {
+            content: "'suh-shaw-nk'";
+        }
+
+        #yalamanchili:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        #yalamanchili:after {
+            content: "Yalamanchili";
+        }
+
+        #yalamanchili:active:after {
+            content: "'yal-ah-munch-ah-lee'";
+        }
     </style>
 </head>
 
@@ -151,7 +177,7 @@
             <div class="w3-container"
                 style="background-color: #fafafa; border-radius: 7pt; padding: 14px; margin-top: 14px;">
                 <h1>Hi,</h1>
-                <p1>I am <b>Sashank</b> Yalamanchili.</p1>
+                <p1>I am <b id="sashank"></b> <span id="yalamanchili"></span>.</p1>
             </div>
             <div class="w3-container profile-right"
                 style="background-color: #fafafa; border-radius: 7pt; padding: 14px; margin-top: 14px;">

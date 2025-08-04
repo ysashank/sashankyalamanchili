@@ -1,218 +1,157 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head class="unselectable">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sashank Yalamanchili</title>
-    <meta name="description" content="Making things easy.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
-    <style>
-        h1 {
-            font-family: Helvetica, sans-serif;
-            color: #595959;
-            text-align: default;
-            font-size: 77px;
-            font-weight: lighter;
-        }
-
-        p1 {
-            font-family: Helvetica, sans-serif;
-            font-size: 35px;
-            text-align: default;
-            color: #595959;
-            font-weight: lighter;
-        }
-
-        p {
-            font-family: Helvetica, sans-serif;
-            text-align: default;
-            color: #595959;
-            font-weight: lighter;
-        }
-
-        li {
-            font-family: Helvetica, sans-serif;
-            text-align: default;
-            color: #595959;
-            font-weight: lighter;
-            margin-bottom: 7px;
-        }
-
-        .photo {
-            text-align: center;
-        }
-
-        .photo img {
-            width: 100%;
-            min-width: 210px;
-            max-width: 700px;
-            height: auto;
-            pointer-events: none;
-            border-radius: 7pt;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        /* mouse over link */
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* selected link */
-        a:active {
-            color: gray;
-        }
-
-        .unselectable {
-            -webkit-user-select: none;
-            -webkit-touch-callout: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .profile-right {
-                display: none;
-            }
-
-            .fun-right {
-                display: none;
-            }
-
-            .photo {
-                text-align: center;
-            }
-
-            .photo img {
-                width: 350px;
-                height: auto;
-            }
-        }
-
-        @media only screen and (min-width: 601px) {
-            .profile-right {
-                display: none;
-            }
-
-            .fun-right {
-                display: none;
-            }
-
-            .photo {
-                text-align: right;
-            }
-
-            .photo img {
-                width: 252px;
-                height: auto;
-            }
-        }
-
-        @media only screen and (min-width: 1000px) {
-            .profile-vertical {
-                display: none;
-            }
-
-            .fun-vertical {
-                display: none;
-            }
-
-            .profile-right {
-                display: block;
-            }
-
-            .fun-right {
-                display: block;
-            }
-
-
-            .photo {
-                text-align: center;
-            }
-
-            .photo img {
-                width: 100%;
-                height: auto;
-            }
-        }
-
-        #sashank:hover {
-            cursor: pointer;
-            text-decoration: underline;
-        }
-
-        #sashank:after {
-            content: "Sashank";
-        }
-
-        #sashank:active:after {
-            content: "'suh-shaw-nk'";
-        }
-
-        #yalamanchili:hover {
-            cursor: pointer;
-            text-decoration: underline;
-        }
-
-        #yalamanchili:after {
-            content: "Yalamanchili";
-        }
-
-        #yalamanchili:active:after {
-            content: "'yal-ah-munch-ah-lee'";
-        }
-    </style>
+    <meta name="description" content="Making things easy." />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sashank Yalamanchili",
+  "alternateName": "Sash",
+  "url": "https://sashankyalamanchili.com",
+  "sameAs": [
+  "https://www.linkedin.com/in/sashankyalamanchili",
+    "https://www.youtube.com/shankyshow",
+    "https://mappstack.com",
+    "https://stackure.com",
+    "https://digitalrack.in",
+    "https://sashstack.com"
+  ],
+  "jobTitle": "Workflow Simplification Strategist",
+  "image": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Shothair%20Profile-87rWZ32UT2jgeea19jVV9C6KdDiF3J.jpeg",
+  "description": "I help lean teams simplify and automate their business processes."
+}
+</script>
 </head>
 
-<body oncontextmenu="return false;" class="unselectable">
-    <div class="w3-row" style="margin-left: 14px; margin-right: 14px;">
-        <div class="w3-container w3-half photo">
-            <div class="w3-container" style="border-radius: 7pt; margin-top: 14px; padding-top: 14px;"><img
-                    src="Profile Picture.jpg">
-            </div>
-        </div>
-        <div class="w3-container w3-half">
-            <div class="w3-container"
-                style="background-color: #fafafa; border-radius: 7pt; padding: 14px; margin-top: 14px;">
-                <h1>Hi,</h1>
-                <p1>I am <b id="sashank"></b> <span id="yalamanchili"></span>.</p1>
-            </div>
-            <div class="w3-container profile-right"
-                style="background-color: #fafafa; border-radius: 7pt; padding: 14px; margin-top: 14px;">
-                <p>I help lean teams to simplify and automate their business processes by breaking down complex
-                    work flows into their simplest forms and strategically architect their solutions.</p>
-                <p><a class="LearnMore" href="./profile.html" target="_blank">Learn
-                        more</a> ></p>
-            </div>
-            <div class="w3-container fun-right"
-                style="background-color: #fafafa; border-radius: 7pt; padding: 14px; margin-top: 14px;">
-                <p>For fun, I enjoy making travel videos which can be found at my YouTube channel called <a
-                        href="https://www.youtube.com/shankyshow" target="_blank">Shankyshow</a> ></p>
-            </div>
-        </div>
-    </div>
-    <div class="w3-row" style="margin-left: 14px; margin-right: 14px;">
-        <div class="w3-container profile-vertical"
-            style="background-color: #fafafa; border-radius: 7pt; padding: 14px; margin-top: 14px;">
-            <p>I help lean teams to simplify and automate their business processes by breaking down complex
-                work flows into their simplest forms and strategically architect their solutions.</p>
-            <p><a class="LearnMore" href="./profile.html" target="_blank">Learn
-                    more</a> ></p>
-        </div>
-        <div class="w3-container fun-vertical"
-            style="background-color: #fafafa; border-radius: 7pt; padding: 14px; margin-top: 14px;">
-            <p>For fun, I enjoy making travel videos which can be found at my YouTube channel called <a
-                    href="https://www.youtube.com/shankyshow" target="_blank">Shankyshow</a> ></p>
-        </div>
+<body class="landing-page section-gray">
 
-    </div>
+    <main class="landing-wrapper section-white">
+        <div class="landing-container">
+            <div class="landing-content">
+
+                <!-- Image -->
+                <div class="landing-image-container">
+                    <img src="images/photo.jpg" alt="Sashank Yalamanchili" class="landing-image" loading="eager" />
+                </div>
+
+                <!-- Info -->
+                <div class="landing-info">
+                    <div class="landing-header">
+                        <h1 class="landing-title">
+                            <span class="landing-greeting">Hi,</span>
+                            <div class="landing-name">
+                                <span class="landing-name-intro">I am</span>
+                                <span class="landing-firstname">Sashank</span>
+                                <span class="landing-lastname">Yalamanchili</span>.
+                            </div>
+                            <div class="landing-nickname">
+                                Most people simply call me <span class="highlight">Sash.</span>
+                            </div>
+                        </h1>
+                    </div>
+
+                    <p class="landing-statement">
+                        I help lean teams to simplify and automate their business processes by breaking down complex
+                        work flows into their simplest forms and strategically architect their solutions.
+                    </p>
+
+                    <p class="landing-statement">
+                        <a href="profile.html" class="landing-link">
+                            See profile
+                            <svg class="landing-link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </p>
+
+                    <p class="landing-statement">
+                        For fun, I enjoy making travel videos which can be found at my YouTube channel called
+                        <a href="https://www.youtube.com/shankyshow" target="_blank" rel="noopener noreferrer"
+                            class="landing-link">
+                            Shankyshow
+                            <svg class="landing-link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>Ventures</h4>
+                <ul>
+                    <li><a href="https://digitalrack.in" target="_blank" rel="noopener noreferrer">Digitalrack</a>
+                    </li>
+                    <li><a href="https://sashstack.com" target="_blank" rel="noopener noreferrer">Sashstack</a></li>
+                    <li>Essent</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="https://mappstack.com" target="_blank" rel="noopener noreferrer">Mappstack</a></li>
+                    <li><a href="https://stackure.com" target="_blank" rel="noopener noreferrer">Stackure</a></li>
+                    <li>Selfsync</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Apps</h4>
+                <ul>
+                    <li>Breathwork</li>
+                    <li>Hold Timer</li>
+                    <li>Plantar Fasciitis Rehab</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Daily Practice</h4>
+                <ul>
+                    <li>Breathwork Routine</li>
+                    <li>Isometric Holds</li>
+                    <li><a href="https://sashstack.com" target="_blank" rel="noopener noreferrer">Nutrition Plan</a>
+                    </li>
+                    <li>Daily Repeatable Meals</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Books</h4>
+                <ul>
+                    <li><a href="https://www.amazon.com/dp/B01EVIF39Y?ref_=cm_sw_r_ffobk_cp_ud_dp_KKT2ZHCYDZPZK3S9R3A4"
+                            target="_blank" rel="noopener noreferrer">Backpacking: A Nerd's hack to Novice
+                            Backpacking</a></li>
+                    <li><a href="https://a.co/d/7aFZ38P" target="_blank" rel="noopener noreferrer">A Yuppie's
+                            approach to Health, Healing & Happiness</a></li>
+                    <li>Unnested - Coming soon</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Fun</h4>
+                <ul>
+                    <li>Vishnu - Animated Sitcom</li>
+                    <li><a href="https://www.youtube.com/shankyshow" target="_blank"
+                            rel="noopener noreferrer">Shankyshow - Travel Vlogs</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">
+                &copy; 2025 Sashank Yalamanchili. All rights reserved.
+            </p>
+        </div>
+    </footer>
 </body>
 
 </html>

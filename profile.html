@@ -1,221 +1,275 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head class="unselectable">
-    <title>Sashank Yalamanchili</title>
-    <meta name="description" content="Making things easy.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
-    <style>
-        p1 {
-            font-family: Helvetica, sans-serif;
-            font-size: 35px;
-            text-align: default;
-            color: #595959;
-            font-weight: lighter;
-        }
-
-        p {
-            font-family: Helvetica, sans-serif;
-            text-align: default;
-            color: #595959;
-            font-weight: lighter;
-        }
-
-        li {
-            font-family: Helvetica, sans-serif;
-            text-align: default;
-            color: #595959;
-            font-weight: lighter;
-            margin-bottom: 7px;
-        }
-
-        .photo {
-            text-align: center;
-        }
-
-        .photo img {
-            width: 100%;
-            max-width: 259px;
-            height: auto;
-            pointer-events: none;
-            border-radius: 7pt;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        a:active {
-            color: gray;
-        }
-
-        .unselectable {
-            -webkit-user-select: none;
-            -webkit-touch-callout: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        @media only screen and (max-width: 706px) {
-
-            .photo img {
-                width: 100%;
-                min-width: 182px;
-            }
-
-            .call-firstRow {
-                display: none;
-            }
-        }
-
-        @media only screen and (min-width: 706px) {
-            .call-firstRow {
-                display: none;
-            }
-
-            .photo img {
-                width: 100%;
-                max-width: 126px;
-            }
-        }
-
-        @media only screen and (min-width: 1000px) {
-            .photo img {
-                width: 100%;
-                max-width: 259px;
-            }
-
-            .call-secondRow {
-                display: none;
-            }
-
-            .call-firstRow {
-                display: block;
-            }
-        }
-    </style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sashank Yalamanchili</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body oncontextmenu="return false;" class="unselectable">
-    <div class="w3-row" style="margin-left: 14px; margin-right: 14px;">
-        <div class="w3-container w3-third photo">
-            <div class="w3-container" style="border-radius: 7pt; margin-top: 14px;"><img src="Profile Picture.jpg">
-            </div>
+<body>
+
+  <!-- Navigation -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <div class="nav-list">
+          <a href="index.html" class="nav-link nav-icon" aria-label="Home">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+            </svg>
+          </a>
+          <a href="#sash" class="nav-link">Sash</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#qualifications" class="nav-link">Qualifications</a>
+          <a href="https://calendly.com/sashankyalamanchili/30min" target="_blank" class="nav-link">Meet</a>
         </div>
-        <div class="w3-container w3-twothird">
-            <div class="w3-container"
-                style="background-color: #fafafa; border-radius: 7pt; padding: 14px; margin-top: 14px;">
-                <p1>I like making things easy.</p1>
-            </div>
-            <div class="w3-container call-firstRow"
-                style="background-color: #fafafa; border-radius: 7pt; padding: 14px; margin-top: 14px;">
-                <p><b>Accepting new projects</b></p>
-                <p style="color: #007AFF;"><a href="https://calendly.com/sashankyalamanchili" target="_blank">Schedule a
-                        call</a> ></p>
-            </div>
-        </div>
+      </nav>
     </div>
-    <div class="w3-row call-secondRow" style="margin-left: 14px; margin-right: 14px;">
-        <div class="w3-container call-secondRow"
-            style="background-color: #fafafa; border-radius: 7pt; padding: 14px; margin-top: 14px;">
-            <p><b>Accepting new projects</b></p>
-            <p style="color: #007AFF;"><a href="https://calendly.com/sashankyalamanchili" target="_blank">Schedule a
-                    call</a> ></p>
-        </div>
-    </div>
-    <div class="w3-row" style="margin-left: 14px; margin-right: 14px;">
-        <div class="w3-container w3-third">
-            <div class="w3-container" style="border-radius: 7pt;background-color: #fafafa; margin-top: 14px;">
-                <p><b>Key Skills</b></p>
-                <ul style="padding-left: 14px; padding-right: 14px;">
-                    <li>Integration architecture.</li>
-                    <li>Solution architecture.</li>
-                    <li>Data architecture.</li>
-                    <li>Middleware technologies.</li>
-                    <li>Business process management.</li>
-                    <li>Event driven automations.</li>
-                    <li>Service oriented solutions.</li>
-                    <li>Structured/unstructured data modeling.</li>
-                    <li>Designing data mapping specifications.</li>
-                    <li>Breaking down complex business requirements into technical solutions.</li>
-                    <li>Presenting technical solutions in a business-friendly language.</li>
-                </ul>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <section id="sash" class="section hero-section">
+      <h1 class="hero-title">I like making things easy.</h1>
+
+      <div class="profile-image-container">
+        <img src="images/photo.jpg" alt="Sashank Yalamanchili" class="profile-image" loading="eager" />
+      </div>
+
+      <div class="hero-subtitle">Accepting new projects.</div>
+
+      <a href="https://calendly.com/sashankyalamanchili/30min" target="_blank" class="hero-button">
+        Schedule a call
+      </a>
+    </section>
+
+    <section id="skills" class="section skills-section section-white">
+      <div class="skills-container">
+        <h2 class="skills-headline">Skills</h2>
+        <div class="skills-categories">
+
+          <div class="skills-category">
+            <h3 class="category-title">Functional</h3>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <p class="skill-text">Integration architecture</p>
+              </div>
+              <div class="skill-card">
+                <p class="skill-text">Solution architecture</p>
+              </div>
+              <div class="skill-card">
+                <p class="skill-text">Business process management</p>
+              </div>
+              <div class="skill-card">
+                <p class="skill-text">Event-driven automations</p>
+              </div>
+              <div class="skill-card">
+                <p class="skill-text">Service-oriented solutions</p>
+              </div>
+              <div class="skill-card">
+                <p class="skill-text">Breaking down complex business requirements into technical solutions</p>
+              </div>
+              <div class="skill-card">
+                <p class="skill-text">Presenting technical solutions in a business-friendly language</p>
+              </div>
+              <div class="skill-card">
+                <p class="skill-text">Composable design</p>
+              </div>
+              <div class="skill-card">
+                <p class="skill-text">Digital Transformation</p>
+              </div>
+              <div class="skill-card">
+                <p class="skill-text">Enterprise Architecture</p>
+              </div>
+              <div class="skill-card">
+                <p class="skill-text">Solution & Process Design</p>
+              </div>
+              <div class="skill-card">
+                <p class="skill-text">Data Integration</p>
+              </div>
             </div>
-        </div>
-        <div class="w3-container w3-twothird">
-            <div class="w3-container" style="border-radius: 7pt; background-color: #fafafa; margin-top: 14px;">
-                <p><b>Experience Summary</b></p>
-                <p><b>Founded</b> Mappstack LLC, Delaware, United States.<br>
-                    Designed a no-code data mapping SaaS platform. Orchestrated the entire infrastructure on AWS
-                    to
-                    implement a pay-as-you-go model and forward to costs to the customers. <span
-                        style="color: #00AB8E;"><a href="https://mappstack.com" target="_blank">See Mappstack</a>
-                        ></span></p>
-                <p><b>Managed</b> the <b>Integrations team</b> globally at On AG, Berlin, Germany.<br>
-                    Introduced integration and automation solutions for the young Swiss based startup undergoing
-                    an
-                    explosive growth in the B2B retail space. Also served as the functional consultant during
-                    the ERP
-                    implementation at the company.</p>
-                <p><b>Directed</b> the <b>EMEA Integrations department</b> at BDP International, Antwerp,
-                    Belgium.<br>
-                    Designed SOA integration solutions specific to EMEA region that would comply for EU
-                    regulations.
-                    Also, hired and built the implementation team from ground-up to supervise the project
-                    implementation.</p>
-                <p>Started career as the principal <b>Integration Consultant</b> in the United States.<br>
-                    Evolved from a junior into a senior consultant by honing skills and gaining experience, by
-                    working
-                    as an external contractor for a variety or projects at large corporations such as GE
-                    Aviation,
-                    Faurecia and etc. between 2010 to 2015.</p>
-                <p><a href="https://www.linkedin.com/in/sashankyalamanchili" target="_blank">Learn More</a> >
-                </p>
+          </div>
+
+          <div class="skills-category">
+            <h3 class="category-title">Technical</h3>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <p class="skill-text">Arc42 and C4 Model</p>
+              </div>
+              <div class="skill-card">
+                <p class="skill-text">Data architecture</p>
+              </div>
+              <div class="skill-card">
+                <p class="skill-text">Middleware technologies</p>
+              </div>
+              <div class="skill-card">
+                <p class="skill-text">Structured/unstructured data modeling</p>
+              </div>
+              <div class="skill-card">
+                <p class="skill-text">Designing data mapping specifications</p>
+              </div>
+              <div class="skill-card">
+                <p class="skill-text">Composable Commerce / MACH Solution Architecture</p>
+              </div>
+              <div class="skill-card">
+                <p class="skill-text">E-Commerce Front & Backend</p>
+              </div>
+              <div class="skill-card">
+                <p class="skill-text">Commercetools</p>
+              </div>
+              <div class="skill-card">
+                <p class="skill-text">Azure / AWS / Vercel</p>
+              </div>
+              <div class="skill-card">
+                <p class="skill-text">Javascript / Express / Nodejs / React</p>
+              </div>
             </div>
+          </div>
+
         </div>
-    </div>
-    <div class="w3-row" style="margin: 14px; border-radius: 7pt; background-color: #fafafa;">
-        <p style="margin-left: 14px;"><b>Qualifications</b></p>
-        <div class="w3-container w3-half">
-            <div class="w3-container">
-                <ul>
-                    <li><b>Masters's</b> in <b>Engineering Management</b>, at <i>Western Michigan University, United
-                            States.</i>.</li>
-                    <li><b>Bachelor's</b> in <b>Electronics and Communications Engineering,</b>, at <i>JNTU
-                            Hyderabad,
-                            India.</i>.</li>
-                </ul>
+      </div>
+    </section>
+
+    <section id="experience" class="section experience-section">
+      <div class="experience-container">
+        <h2 class="experience-headline">Experience</h2>
+        <div class="experience-grid">
+
+          <div class="experience-item">
+            <div class="experience-content">
+              <h3 class="experience-title">Solution Architect</h3>
+              <p class="experience-company">Large Multinational Chemical Supplier Corporation</p>
+              <span class="experience-location">🇩🇪 Germany</span>
+              <p class="experience-description">
+                Led the architecture and strategy for a B2B ecommerce platform and a backoffice operations platform for
+                a leading chemical supplier, focusing on migration from legacy systems.
+              </p>
             </div>
-        </div>
-        <div class="w3-container w3-half">
-            <div class="w3-container">
-                <ul>
-                    <li><b>Enterprise Architecture Essentials</b>, certified by <i>Fragile to Agile (Asia Pac) Pty
-                            Ltd.,
-                            Australia</i>.</li>
-                    <li>Associate <b>AWS Solutions Architect</b>, training completed. Certification exam is
-                        <i>tbd</i>.
-                    </li>
-                    <li><b>Google Cloud Architect</b>, training completed. Certification exam is <i>tbd</i>.</li>
-                </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-content">
+              <h3 class="experience-title">Solution Architect</h3>
+              <p class="experience-company">Large Multinational Home Improvement and DIY European Chain</p>
+              <span class="experience-location">🇩🇪 Germany</span>
+              <p class="experience-description">
+                Architected a customer service solution for large enterprise supplier, utilizing Zendesk with near
+                real-time event-driven data integration for enhanced customer service. Supported in building a platform
+                for handling payments, commissions, and payouts across multiple stakeholders including marketplaces,
+                buyers, sellers, and third-party vendors.
+              </p>
             </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-content">
+              <h3 class="experience-title">Founder</h3>
+              <p class="experience-company">Mappstack LLC</p>
+              <span class="experience-location">🇦🇺 Adelaide, Australia</span>
+              <p class="experience-description">
+                Designed a no-code data mapping SaaS platform. Orchestrated the entire infrastructure on AWS to
+                implement a pay-as-you-go model and forward costs to the customers.
+              </p>
+              <a href="https://mappstack.com/" target="_blank" class="experience-link">
+                See Mappstack
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 18L15 12L9 6" stroke="#494949" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-content">
+              <h3 class="experience-title">Integrations Team Manager</h3>
+              <p class="experience-company">On AG</p>
+              <span class="experience-location">🇩🇪 Berlin, Germany</span>
+              <p class="experience-description">
+                Introduced integration and automation solutions for the young Swiss-based startup undergoing explosive
+                growth in the B2B retail space. Also served as the functional consultant during the ERP implementation
+                at the company.
+              </p>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-content">
+              <h3 class="experience-title">EMEA Integrations Director</h3>
+              <p class="experience-company">BDP International</p>
+              <span class="experience-location">🇧🇪 Antwerp, Belgium</span>
+              <p class="experience-description">
+                Designed SOA integration solutions specific to the EMEA region that complied with EU regulations. Hired
+                and built the implementation team from the ground up to supervise the project implementation.
+              </p>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-content">
+              <h3 class="experience-title">Integration Consultant</h3>
+              <p class="experience-company">Various Companies</p>
+              <span class="experience-location">🇺🇸 United States</span>
+              <p class="experience-description">
+                Evolved from a junior into a senior consultant by honing skills and gaining experience, working as an
+                external contractor for various projects at large corporations such as GE Aviation and Faurecia between
+                2010 to 2015.
+              </p>
+            </div>
+          </div>
+
         </div>
+      </div>
+    </section>
+
+    <section id="qualifications" class="section qualifications-section">
+      <div class="qualifications-container">
+        <h2 class="qualifications-headline">Qualifications</h2>
+        <div class="qualifications-grid">
+
+          <div class="qualification-card">
+            <h3 class="qualification-degree">Master's in Engineering Management</h3>
+            <p class="qualification-details">Western Michigan University, 🇺🇸 United States</p>
+          </div>
+
+          <div class="qualification-card">
+            <h3 class="qualification-degree">Bachelor's in Electronics and Communications Engineering</h3>
+            <p class="qualification-details">JNTU Hyderabad, 🇮🇳 India</p>
+          </div>
+
+          <div class="qualification-card">
+            <h3 class="qualification-degree">Enterprise Architecture Essentials</h3>
+            <p class="qualification-details">Fragile to Agile (Asia Pac) Pty Ltd., 🇦🇺 Australia</p>
+          </div>
+
+          <div class="qualification-card">
+            <h3 class="qualification-degree">Associate AWS Solutions Architect</h3>
+            <p class="qualification-details">Training completed. Certification exam is TBD, 👨🏾‍💻</p>
+          </div>
+
+          <div class="qualification-card">
+            <h3 class="qualification-degree">Google Cloud Architect</h3>
+            <p class="qualification-details">Training completed. Certification exam is TBD, 👨🏾‍💻</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; 2025 Sashank Yalamanchili. All rights reserved.
+      </p>
     </div>
-    <div class="w3-row" style="margin: 14px;">
-        <p>
-            < <a href="/">Overview</a>
-        </p>
-    </div>
+  </footer>
+
 </body>
 
 </html>

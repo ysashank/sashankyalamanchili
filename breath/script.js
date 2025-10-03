@@ -352,6 +352,10 @@ function stopSession() {
     showHome();
 }
 
+function viewExercises() {
+    window.location.href = 'exercises/index.html';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     showHome();
 });

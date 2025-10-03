@@ -28,8 +28,17 @@ body {
     font-size: 3rem;
     font-weight: 100;
     letter-spacing: 3px;
-    margin-bottom: 3rem;
     opacity: 0.85;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 100;
+    letter-spacing: 1px;
+    margin-bottom: 3rem;
+    opacity: 0.3;
+    text-align: center;
 }
 
 .buttons {
@@ -40,19 +49,51 @@ body {
 }
 
 .routine-btn {
-    background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 100%);
-    border: 0.5px solid rgba(255,255,255,0.1);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     color: white;
     font-size: 1.2rem;
     padding: 16px 24px;
     cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 .routine-btn:hover {
-    background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.06) 100%);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 100%);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.routine-btn.secondary {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 0.5px solid rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+}
+
+.routine-btn.secondary:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.divider {
+    width: 100px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 2rem auto 1.5rem auto;
+}
+
+.learn-more {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    transition: color 0.2s ease;
+}
+
+.learn-more:hover {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .session-header {
@@ -87,7 +128,7 @@ body {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,255,255,0.16) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.16) 0%, transparent 70%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,7 +144,7 @@ body {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 0%, transparent 70%);
     filter: blur(20px);
     z-index: -1;
 }
@@ -116,10 +157,10 @@ body {
 }
 
 .stop-btn {
-    background: rgba(255,255,255,0.04);
-    border: 0.5px solid rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.04);
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
     border-radius: 14px;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.5);
     font-size: 1rem;
     padding: 14px 48px;
     cursor: pointer;
@@ -127,29 +168,29 @@ body {
 }
 
 .stop-btn:hover {
-    background: rgba(255,255,255,0.08);
-    color: rgba(255,255,255,0.7);
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 @media (max-width: 768px) {
     .title {
         font-size: 2.5rem;
     }
-    
+
     .buttons {
         width: 250px;
     }
-    
+
     .breathing-circle {
         width: 250px;
         height: 250px;
     }
-    
+
     .breathing-circle::before {
         width: 250px;
         height: 250px;
     }
-    
+
     .phase-count {
         font-size: 6rem;
     }

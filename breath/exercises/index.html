@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breathsy - Exercises</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <div id="exercises" class="screen active">
+            <div class="header">
+                <button class="back-btn" onclick="goHome()">‹ Back</button>
+                <h1 class="title">Breathing Exercises</h1>
+            </div>
+
+            <div class="routines-container">
+                <!-- Morning Routine Section -->
+                <div class="routine-section">
+                    <h2 class="routine-title">Morning Routine</h2>
+                    <div class="exercises-carousel">
+                        <div class="exercise-card">
+                            <h3>Wim Hof Method</h3>
+                            <div class="pattern">1s in • 1s out</div>
+                            <div class="duration">10 minutes</div>
+                            <p class="description">Rapid breathing technique that increases oxygen levels and activates
+                                the sympathetic nervous system.</p>
+                        </div>
+
+                        <div class="exercise-card">
+                            <h3>Box Breathing</h3>
+                            <div class="pattern">6s in • 6s hold • 6s out • 6s hold</div>
+                            <div class="duration">6 minutes</div>
+                            <p class="description">Four-square breathing pattern that promotes focus and reduces stress
+                                through balanced timing.</p>
+                        </div>
+
+                        <div class="exercise-card">
+                            <h3>Coherent Breathing</h3>
+                            <div class="pattern">5s in • 5s out</div>
+                            <div class="duration">4 minutes</div>
+                            <p class="description">Smooth, rhythmic breathing that optimizes heart rate variability and
+                                promotes relaxation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Midday Routine Section -->
+                <div class="routine-section">
+                    <h2 class="routine-title">Midday Routine</h2>
+                    <div class="exercises-carousel">
+                        <div class="exercise-card">
+                            <h3>Nadi Shodhana</h3>
+                            <div class="pattern">6s in • 6s hold • 6s out • 6s hold</div>
+                            <div class="duration">5 minutes</div>
+                            <p class="description">Alternate nostril breathing that balances the nervous system and
+                                calms the mind.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Evening Routine Section -->
+                <div class="routine-section">
+                    <h2 class="routine-title">Evening Routine</h2>
+                    <div class="exercises-carousel">
+                        <div class="exercise-card">
+                            <h3>Extended Exhale</h3>
+                            <div class="pattern">4s in • 16s out</div>
+                            <div class="duration">8 minutes</div>
+                            <p class="description">Long exhales activate the parasympathetic nervous system for deep
+                                relaxation.</p>
+                        </div>
+
+                        <div class="exercise-card">
+                            <h3>Bhramari Pranayama</h3>
+                            <div class="pattern">4s in • 8s hum</div>
+                            <div class="duration">4 minutes</div>
+                            <p class="description">Humming breath that creates calming vibrations and reduces mental
+                                chatter.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

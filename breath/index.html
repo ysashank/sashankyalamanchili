@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Breathsy</title>
+    <title>Breathwork - The Daily Ritual</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="app">
         <div id="home" class="screen active">
-            <h1 class="title">Breathsy</h1>
+            <h1 class="title">Breathwork</h1>
+            <p class="subtitle">Just click and follow.</p>
             <div class="buttons">
                 <button class="routine-btn" onclick="startRoutine('morning')">Morning</button>
                 <button class="routine-btn" onclick="startRoutine('midday')">Midday</button>
                 <button class="routine-btn" onclick="startRoutine('evening')">Evening</button>
             </div>
+            <div class="divider"></div>
+            <a href="#" class="learn-more" onclick="viewExercises(); return false;">See exercises ›</a>
         </div>
 
         <div id="session" class="screen">
@@ -22,17 +27,18 @@
                 <h2 id="exercise-name" class="exercise-name"></h2>
                 <p id="phase-label" class="phase-label"></p>
             </div>
-            
+
             <div class="breathing-circle-container">
                 <div id="breathing-circle" class="breathing-circle">
                     <span id="phase-count" class="phase-count">5</span>
                 </div>
             </div>
-            
+
             <button id="stop-btn" class="stop-btn" onclick="stopSession()">Stop</button>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

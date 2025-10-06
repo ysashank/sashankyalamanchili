@@ -1,46 +1,25 @@
-# Breathsy Web App
+# Breathwork - The Daily Ritual
 
-A simple breathing exercise application with guided routines.
+Just click and follow.
 
 ## Features
 
-- **Morning Routine**: Wim Hof Method + Box Breathing + Coherent Breathing
-- **Midday Routine**: Nadi Shodhana (Alternate Nostril Breathing)
-- **Evening Routine**: Extended Exhale + Bhramari (Humming Breath)
-- Animated breathing circle with visual guidance
-- Audio feedback for each breathing phase
-- Clean dark interface
-- No dependencies - pure HTML, CSS, and JavaScript
+- **Morning**: Wim Hof Method + Box Breathing + Coherent Breathing  
+- **Midday**: Nadi Shodhana (Alternate Nostril Breathing)
+- **Evening**: Extended Exhale + Bhramari (Humming Breath)
+- Exercise browser with visual guidance
+- Audio feedback and preparation phases
+- Clean interface, no dependencies
 
 ## Usage
 
-1. Open `index.html` in any modern web browser
-2. Choose Morning, Midday, or Evening routine
-3. Follow the visual and audio cues for breathing exercises
-4. Use the Stop button to exit at any time
+Open `index.html` and choose a routine.
 
-## Breathing Techniques
+## Techniques
 
-### Wim Hof Method
-- 1 second rapid inhale, 1 second quick exhale
-- 10 minutes total duration
-
-### Box Breathing
-- 6-6-6-6 pattern (inhale-hold-exhale-hold)
-- 6 minutes total duration
-
-### Coherent Breathing
-- 5 seconds inhale, 5 seconds exhale
-- 4 minutes total duration
-
-### Nadi Shodhana (Alternate Nostril)
-- 6-6-6-6 pattern (inhale-hold-exhale-hold)
-- 5 minutes total duration
-
-### Extended Exhale
-- 4 seconds inhale, 16 seconds exhale
-- 8 minutes total duration
-
-### Bhramari (Humming Breath)
-- 4 seconds inhale, 8 seconds hum on exhale
-- 4 minutes total duration
+**Wim Hof Method** - 1s in/out, 10 min  
+**Box Breathing** - 6-6-6-6 pattern, 6 min  
+**Coherent Breathing** - 5s in/out, 4 min  
+**Nadi Shodhana** - 6-6-6-6 pattern, 5 min  
+**Extended Exhale** - 4s in/16s out, 8 min  
+**Bhramari** - 4s in/8s hum, 4 min

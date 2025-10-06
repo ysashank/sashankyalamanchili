@@ -2,6 +2,7 @@ class SoundManager {
     constructor() {
         this.audioContext = null;
         this.gainNode = null;
+        this.wakeLock = null;
         this.initAudio();
     }
     
@@ -13,6 +14,31 @@ class SoundManager {
             this.gainNode.gain.value = 0.3;
         } catch (e) {
             console.log('Web Audio API not supported');
+        }
+    }
+
+    async requestWakeLock() {
+        try {
+            if ('wakeLock' in navigator) {
+                this.wakeLock = await navigator.wakeLock.request('screen');
+                console.log('Screen wake lock active');
+            }
+        } catch (err) {
+            console.log('Wake lock failed:', err);
+        }
+    }
+
+    releaseWakeLock() {
+        if (this.wakeLock) {
+            this.wakeLock.release();
+            this.wakeLock = null;
+            console.log('Screen wake lock released');
+        }
+    }
+
+    vibrate(pattern = [100]) {
+        if ('vibrate' in navigator) {
+            navigator.vibrate(pattern);
         }
     }
     
@@ -45,18 +71,22 @@ class SoundManager {
     
     playInhaleTick() {
         this.createTickSound(40, 0.15);
+        this.vibrate([50]);
     }
     
     playExhaleTick() {
         this.createTickSound(10, 0.15);
+        this.vibrate([100]);
     }
     
     playHoldTick() {
         this.createTickSound(7.83, 0.12);
+        this.vibrate([30]);
     }
     
     playPrepTick() {
         this.createTickSound(111, 0.18);
+        this.vibrate([80]);
     }
     
     play(soundType) {
@@ -77,9 +107,11 @@ class SoundManager {
     }
     
     stop() {
+        this.releaseWakeLock();
     }
     
     stopAll() {
+        this.releaseWakeLock();
     }
 }
 
@@ -106,6 +138,9 @@ class BreathingExercise {
         this.currentPhaseTime = 0;
         this.lastTickSecond = -1;
         
+        // Request wake lock to prevent screen from dimming
+        this.soundManager.requestWakeLock();
+        
         const exerciseName = document.getElementById('exercise-name');
         exerciseName.textContent = this.name;
         exerciseName.style.opacity = '0.5';
@@ -124,6 +159,7 @@ class BreathingExercise {
             this.animationTimer = null;
         }
         this.soundManager.stopAll();
+        this.soundManager.releaseWakeLock();
         this.isRunning = false;
     }
 
@@ -178,6 +214,10 @@ class BreathingExercise {
         
         if (isPhaseStart || secondChanged) {
             this.soundManager.play(currentPhase.type);
+            // Stronger vibration for phase transitions
+            if (isPhaseStart) {
+                this.soundManager.vibrate([150, 50, 150]);
+            }
         }
         
         let scale;

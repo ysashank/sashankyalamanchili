@@ -131,41 +131,20 @@ class SoundManager {
         }
     }
     
-    playInhaleTick() {
-        this.createTickSound(40, 0.15);
-        this.vibrate([50]);
-    }
-    
-    playExhaleTick() {
-        this.createTickSound(10, 0.15);
-        this.vibrate([100]);
-    }
-    
-    playHoldTick() {
-        this.createTickSound(7.83, 0.12);
-        this.vibrate([30]);
-    }
-    
-    playPrepTick() {
-        this.createTickSound(111, 0.18);
-        this.vibrate([80]);
+    playTick(frequency, duration, vibratePattern) {
+        this.createTickSound(frequency, duration);
+        this.vibrate(vibratePattern);
     }
     
     play(soundType) {
-        switch(soundType) {
-            case 'inhale':
-                this.playInhaleTick();
-                break;
-            case 'exhale':
-                this.playExhaleTick();
-                break;
-            case 'hold':
-                this.playHoldTick();
-                break;
-            case 'prep':
-                this.playPrepTick();
-                break;
-        }
+        const configs = {
+            'inhale': [40, 0.15, [50]],
+            'exhale': [10, 0.15, [100]],
+            'hold': [7.83, 0.12, [30]],
+            'prep': [111, 0.18, [80]]
+        };
+        const [freq, dur, vib] = configs[soundType] || [];
+        if (freq) this.playTick(freq, dur, vib);
     }
     
     stop() {
@@ -178,7 +157,7 @@ class SoundManager {
 }
 
 class BreathingExercise {
-    constructor(name, pattern) {
+    constructor(name, pattern, onComplete = null) {
         this.name = name;
         this.pattern = pattern;
         this.timer = null;
@@ -190,6 +169,12 @@ class BreathingExercise {
         this.isPrep = true;
         this.soundManager = new SoundManager();
         this.lastTickSecond = -1;
+        this.onComplete = onComplete;
+        
+        // Scale constants
+        this.SCALE_MIN = 0.8;
+        this.SCALE_MAX = 1.4;
+        this.SCALE_RANGE = 0.6;
     }
 
     async start() {
@@ -284,11 +269,11 @@ class BreathingExercise {
         
         let scale;
         if (currentPhase.type === 'inhale') {
-            scale = 0.8 + (progress * 0.6);
+            scale = this.SCALE_MIN + (progress * this.SCALE_RANGE);
         } else if (currentPhase.type === 'exhale') {
-            scale = 1.4 - (progress * 0.6);
+            scale = this.SCALE_MAX - (progress * this.SCALE_RANGE);
         } else {
-            scale = currentPhase.type === 'hold-in' ? 1.4 : 0.8;
+            scale = currentPhase.type === 'hold-in' ? this.SCALE_MAX : this.SCALE_MIN;
         }
         
         this.updateUI({
@@ -335,9 +320,13 @@ class BreathingExercise {
 
     complete() {
         this.stop();
-        setTimeout(() => {
-            showHome();
-        }, 1500);
+        if (this.onComplete) {
+            this.onComplete();
+        } else {
+            setTimeout(() => {
+                showHome();
+            }, 1500);
+        }
     }
 }
 
@@ -429,19 +418,15 @@ async function startNextExercise() {
     }
 
     const pattern = currentRoutine[routineIndex];
-    currentExercise = new BreathingExercise(pattern.name, pattern);
-    
-    showSession();
-    await currentExercise.start();
-
-    const originalComplete = currentExercise.complete.bind(currentExercise);
-    currentExercise.complete = function() {
-        originalComplete();
+    currentExercise = new BreathingExercise(pattern.name, pattern, () => {
         routineIndex++;
         setTimeout(() => {
             startNextExercise();
         }, 2000);
-    };
+    });
+    
+    showSession();
+    await currentExercise.start();
 }
 
 function stopSession() {

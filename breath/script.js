@@ -19,15 +19,12 @@ class SoundManager {
             this.gainNode = this.audioContext.createGain();
             this.gainNode.connect(this.audioContext.destination);
             this.gainNode.gain.value = this.isIOS ? 0.5 : 0.3;
-            console.log('Audio initialized, state:', this.audioContext.state);
         } catch (e) {
-            console.log('Web Audio API not supported:', e);
+            console.error('Web Audio API not supported:', e);
         }
     }
 
     async enableAudio() {
-        console.log('enableAudio called, isIOS:', this.isIOS, 'audioContext:', !!this.audioContext);
-        
         // Initialize audio context on first user interaction for iOS
         if (this.isIOS && !this.audioContext) {
             this.initAudio();
@@ -38,14 +35,11 @@ class SoundManager {
         try {
             // Resume audio context
             if (this.audioContext.state === 'suspended') {
-                console.log('Resuming suspended audio context...');
                 await this.audioContext.resume();
-                console.log('Audio context resumed, state:', this.audioContext.state);
             }
             
             // Unlock audio on iOS by playing a silent sound
             if (this.isIOS && !this.audioUnlocked) {
-                console.log('Unlocking iOS audio...');
                 const unlockOscillator = this.audioContext.createOscillator();
                 const unlockGain = this.audioContext.createGain();
                 unlockGain.gain.value = 0.01; // Very quiet
@@ -57,14 +51,12 @@ class SoundManager {
                 // Wait a bit for the unlock to complete
                 await new Promise(resolve => setTimeout(resolve, 100));
                 this.audioUnlocked = true;
-                console.log('iOS audio unlocked');
             }
             
             this.audioEnabled = true;
-            console.log('Audio enabled successfully');
             return true;
         } catch (e) {
-            console.log('Audio enable failed:', e);
+            console.error('Audio enable failed:', e);
             return false;
         }
     }
@@ -75,7 +67,7 @@ class SoundManager {
                 this.wakeLock = await navigator.wakeLock.request('screen');
             }
         } catch (err) {
-            console.log('Wake lock failed:', err);
+            console.error('Wake lock failed:', err);
         }
     }
 
@@ -89,11 +81,9 @@ class SoundManager {
     vibrate(pattern = [100]) {
         if ('vibrate' in navigator && !this.isIOS) {
             navigator.vibrate(pattern);
-            console.log('Vibration triggered:', pattern);
         } 
         // iOS doesn't support vibration API, use haptic audio feedback
         else if (this.isIOS) {
-            console.log('iOS haptic feedback requested:', pattern);
             if (Array.isArray(pattern)) {
                 let delay = 0;
                 pattern.forEach((duration, index) => {
@@ -109,17 +99,11 @@ class SoundManager {
     }
     
     createTickSound(frequency, duration = 0.1) {
-        if (!this.audioContext || !this.audioEnabled) {
-            console.log('Cannot play tick - audioContext:', !!this.audioContext, 'audioEnabled:', this.audioEnabled);
-            return;
-        }
+        if (!this.audioContext || !this.audioEnabled) return;
         
         if (this.audioContext.state === 'suspended') {
-            console.log('Audio context suspended, attempting resume...');
             this.audioContext.resume();
         }
-        
-        console.log('Playing tick sound - freq:', frequency, 'duration:', duration);
         
         const oscillator = this.audioContext.createOscillator();
         const tickGain = this.audioContext.createGain();
@@ -142,12 +126,7 @@ class SoundManager {
     }
 
     createHapticFeedback(duration = 50) {
-        if (!this.audioContext || !this.audioEnabled) {
-            console.log('Cannot create haptic - audioContext:', !!this.audioContext, 'audioEnabled:', this.audioEnabled);
-            return;
-        }
-        
-        console.log('Creating haptic feedback, duration:', duration);
+        if (!this.audioContext || !this.audioEnabled) return;
         
         try {
             const oscillator = this.audioContext.createOscillator();
@@ -168,15 +147,12 @@ class SoundManager {
             
             oscillator.start(now);
             oscillator.stop(now + durationSec);
-            
-            console.log('Haptic feedback created successfully');
         } catch (e) {
-            console.log('Haptic feedback failed:', e);
+            console.error('Haptic feedback failed:', e);
         }
     }
     
     playTick(frequency, duration, vibratePattern) {
-        console.log('playTick called - freq:', frequency, 'duration:', duration, 'vibrate:', vibratePattern);
         this.createTickSound(frequency, duration);
         if (vibratePattern) {
             this.vibrate(vibratePattern);
@@ -191,7 +167,6 @@ class SoundManager {
             'prep': [111, 0.18, [80]]
         };
         const [freq, dur, vib] = configs[soundType] || [];
-        console.log('play called with soundType:', soundType, 'config:', [freq, dur, vib]);
         if (freq) this.playTick(freq, dur, vib);
     }
     
@@ -227,7 +202,6 @@ class BreathingExercise {
     }
 
     async start() {
-        console.log('Exercise starting...');
         this.isRunning = true;
         this.isPrep = true;
         this.prepTime = 5;
@@ -236,8 +210,7 @@ class BreathingExercise {
         this.lastTickSecond = -1;
         
         // Enable audio - critical for iOS
-        const audioEnabled = await this.soundManager.enableAudio();
-        console.log('Audio enabled result:', audioEnabled);
+        await this.soundManager.enableAudio();
         
         // Request wake lock
         await this.soundManager.requestWakeLock();
@@ -469,8 +442,6 @@ function showSession() {
 }
 
 async function startRoutine(type) {
-    console.log('Starting routine:', type);
-    
     // Initialize and unlock audio immediately on button click
     const manager = initGlobalSoundManager();
     await manager.enableAudio();
@@ -482,13 +453,11 @@ async function startRoutine(type) {
 
 async function startNextExercise() {
     if (routineIndex >= currentRoutine.length) {
-        console.log('Routine complete');
         showHome();
         return;
     }
 
     const pattern = currentRoutine[routineIndex];
-    console.log('Starting exercise:', pattern.name, 'index:', routineIndex);
     currentExercise = new BreathingExercise(pattern.name, pattern, () => {
         routineIndex++;
         setTimeout(() => {

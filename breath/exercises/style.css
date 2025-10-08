@@ -1,12 +1,9 @@
-/* Import base styles from main app */
 @import url('../style.css');
 
-/* Override body overflow for exercises page to allow scrolling */
 body {
     overflow: auto;
 }
 
-/* Exercises page specific styles */
 .header {
     display: flex;
     align-items: center;

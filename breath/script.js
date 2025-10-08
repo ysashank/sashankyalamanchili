@@ -3,6 +3,8 @@ class SoundManager {
         this.audioContext = null;
         this.gainNode = null;
         this.wakeLock = null;
+        this.isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        this.audioEnabled = false;
         this.initAudio();
     }
     
@@ -11,9 +13,37 @@ class SoundManager {
             this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
             this.gainNode = this.audioContext.createGain();
             this.gainNode.connect(this.audioContext.destination);
-            this.gainNode.gain.value = 0.3;
+            // Higher volume for mobile devices
+            this.gainNode.gain.value = this.isIOS ? 0.8 : 0.3;
         } catch (e) {
             console.log('Web Audio API not supported');
+        }
+    }
+
+    async enableAudio() {
+        if (!this.audioContext) return false;
+        
+        try {
+            if (this.audioContext.state === 'suspended') {
+                await this.audioContext.resume();
+            }
+            
+            // Play a silent sound to enable audio on iOS
+            if (this.isIOS) {
+                const oscillator = this.audioContext.createOscillator();
+                const gainNode = this.audioContext.createGain();
+                gainNode.gain.value = 0;
+                oscillator.connect(gainNode);
+                gainNode.connect(this.audioContext.destination);
+                oscillator.start();
+                oscillator.stop(this.audioContext.currentTime + 0.1);
+            }
+            
+            this.audioEnabled = true;
+            return true;
+        } catch (e) {
+            console.log('Audio enable failed:', e);
+            return false;
         }
     }
 
@@ -37,13 +67,26 @@ class SoundManager {
     }
 
     vibrate(pattern = [100]) {
-        if ('vibrate' in navigator) {
+        // Try native vibration first
+        if ('vibrate' in navigator && !this.isIOS) {
             navigator.vibrate(pattern);
+        } 
+        // Fallback to audio-based haptic for iOS
+        else if (this.isIOS && this.audioEnabled) {
+            if (Array.isArray(pattern)) {
+                pattern.forEach((duration, index) => {
+                    if (index % 2 === 0) { // Only vibrate on odd indices (skip pauses)
+                        setTimeout(() => this.createHapticFeedback(duration), index * 100);
+                    }
+                });
+            } else {
+                this.createHapticFeedback(pattern);
+            }
         }
     }
     
     createTickSound(frequency, duration = 0.1) {
-        if (!this.audioContext) return;
+        if (!this.audioContext || !this.audioEnabled) return;
         
         if (this.audioContext.state === 'suspended') {
             this.audioContext.resume();
@@ -67,6 +110,34 @@ class SoundManager {
         oscillator.stop(now + duration);
         
         return oscillator;
+    }
+
+    // iOS-specific haptic feedback using AudioContext
+    createHapticFeedback(duration = 50) {
+        if (!this.audioContext || !this.audioEnabled) return;
+        
+        try {
+            const oscillator = this.audioContext.createOscillator();
+            const gainNode = this.audioContext.createGain();
+            
+            // Very low frequency for haptic-like effect
+            oscillator.frequency.value = 20;
+            oscillator.type = 'sine';
+            
+            // Low volume for haptic effect
+            gainNode.gain.value = 0.1;
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(this.audioContext.destination);
+            
+            const now = this.audioContext.currentTime;
+            const durationSec = duration / 1000;
+            
+            oscillator.start(now);
+            oscillator.stop(now + durationSec);
+        } catch (e) {
+            console.log('Haptic feedback failed:', e);
+        }
     }
     
     playInhaleTick() {
@@ -130,13 +201,16 @@ class BreathingExercise {
         this.lastTickSecond = -1;
     }
 
-    start() {
+    async start() {
         this.isRunning = true;
         this.isPrep = true;
         this.prepTime = 5;
         this.currentPhaseIndex = 0;
         this.currentPhaseTime = 0;
         this.lastTickSecond = -1;
+        
+        // Enable audio context on user interaction (required for iOS)
+        await this.soundManager.enableAudio();
         
         // Request wake lock to prevent screen from dimming
         this.soundManager.requestWakeLock();
@@ -360,7 +434,7 @@ function startRoutine(type) {
     startNextExercise();
 }
 
-function startNextExercise() {
+async function startNextExercise() {
     if (routineIndex >= currentRoutine.length) {
         showHome();
         return;
@@ -370,7 +444,7 @@ function startNextExercise() {
     currentExercise = new BreathingExercise(pattern.name, pattern);
     
     showSession();
-    currentExercise.start();
+    await currentExercise.start();
 
     const originalComplete = currentExercise.complete.bind(currentExercise);
     currentExercise.complete = function() {

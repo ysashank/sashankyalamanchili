@@ -13,7 +13,6 @@ class SoundManager {
             this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
             this.gainNode = this.audioContext.createGain();
             this.gainNode.connect(this.audioContext.destination);
-            // Higher volume for mobile devices
             this.gainNode.gain.value = this.isIOS ? 0.8 : 0.3;
         } catch (e) {
             console.log('Web Audio API not supported');
@@ -28,7 +27,6 @@ class SoundManager {
                 await this.audioContext.resume();
             }
             
-            // Play a silent sound to enable audio on iOS
             if (this.isIOS) {
                 const oscillator = this.audioContext.createOscillator();
                 const gainNode = this.audioContext.createGain();
@@ -51,7 +49,6 @@ class SoundManager {
         try {
             if ('wakeLock' in navigator) {
                 this.wakeLock = await navigator.wakeLock.request('screen');
-                console.log('Screen wake lock active');
             }
         } catch (err) {
             console.log('Wake lock failed:', err);
@@ -62,20 +59,17 @@ class SoundManager {
         if (this.wakeLock) {
             this.wakeLock.release();
             this.wakeLock = null;
-            console.log('Screen wake lock released');
         }
     }
 
     vibrate(pattern = [100]) {
-        // Try native vibration first
         if ('vibrate' in navigator && !this.isIOS) {
             navigator.vibrate(pattern);
         } 
-        // Fallback to audio-based haptic for iOS
         else if (this.isIOS && this.audioEnabled) {
             if (Array.isArray(pattern)) {
                 pattern.forEach((duration, index) => {
-                    if (index % 2 === 0) { // Only vibrate on odd indices (skip pauses)
+                    if (index % 2 === 0) {
                         setTimeout(() => this.createHapticFeedback(duration), index * 100);
                     }
                 });
@@ -112,7 +106,6 @@ class SoundManager {
         return oscillator;
     }
 
-    // iOS-specific haptic feedback using AudioContext
     createHapticFeedback(duration = 50) {
         if (!this.audioContext || !this.audioEnabled) return;
         
@@ -120,11 +113,9 @@ class SoundManager {
             const oscillator = this.audioContext.createOscillator();
             const gainNode = this.audioContext.createGain();
             
-            // Very low frequency for haptic-like effect
             oscillator.frequency.value = 20;
             oscillator.type = 'sine';
             
-            // Low volume for haptic effect
             gainNode.gain.value = 0.1;
             
             oscillator.connect(gainNode);
@@ -209,10 +200,8 @@ class BreathingExercise {
         this.currentPhaseTime = 0;
         this.lastTickSecond = -1;
         
-        // Enable audio context on user interaction (required for iOS)
         await this.soundManager.enableAudio();
         
-        // Request wake lock to prevent screen from dimming
         this.soundManager.requestWakeLock();
         
         const exerciseName = document.getElementById('exercise-name');
@@ -288,7 +277,6 @@ class BreathingExercise {
         
         if (isPhaseStart || secondChanged) {
             this.soundManager.play(currentPhase.type);
-            // Stronger vibration for phase transitions
             if (isPhaseStart) {
                 this.soundManager.vibrate([150, 50, 150]);
             }

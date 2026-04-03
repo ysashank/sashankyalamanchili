@@ -163,31 +163,6 @@ a:hover {
   margin: 0;
 }
 
-.hero-subtitle {
-  font-size: 1.5rem;
-  font-weight: 400;
-  text-align: center;
-  color: #494949;
-  margin: 0;
-}
-
-.hero-button {
-  display: inline-flex;
-  align-items: center;
-  background-color: #494949;
-  color: white;
-  padding: 0.77rem 1.5rem;
-  border-radius: 9999px;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.hero-button:hover {
-  background-color: #595959;
-  color: white;
-  text-decoration: none;
-}
-
 @media (min-width: 768px) {
   .hero-title {
     font-size: 3rem;

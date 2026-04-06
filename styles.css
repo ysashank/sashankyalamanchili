@@ -437,22 +437,6 @@ a:hover {
   }
 }
 
-/* Footer styles */
-
-footer {
-  font-size: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* border-top: 1px solid #e5e5e5; */
-}
-
-.copyright {
-  margin: 0;
-  font-size: 0.75rem;
-  color: #494949;
-}
-
 /* Landing page styles */
 .landing-wrapper {
   display: flex;
@@ -547,6 +531,14 @@ footer {
   color: #86868b;
 }
 
+.landing-philosophy {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  margin: 0;
+  color: #86868b;
+  font-weight: 400;
+}
+
 .landing-link {
   display: inline-flex;
   align-items: center;
@@ -578,10 +570,6 @@ footer {
     width: 217px;
   }
 
-  .landing-header {
-    text-align: center;
-  }
-
   .landing-greeting {
     font-size: 4rem;
   }
@@ -608,50 +596,96 @@ footer {
     height: 490px;
   }
 
-  .landing-actions {
-    align-items: flex-start;
+}
+
+.world-grid {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #e5e5e5;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 650px) {
+  .world-grid {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
-.footer-grid {
+.world-grid-inner {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 2rem;
-  padding: 1rem;
-  border-bottom: 1px solid #e5e5e5;
-  align-self: center;
-  max-width: 980px;
+  width: 100%;
 }
 
-.footer-column {
+@media (max-width: 572px) {
+  .world-grid-inner {
+    justify-content: left;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 890px) {
+  .world-grid-inner {
+    justify-content: space-between;
+  }
+}
+
+.world-column {
   flex: 0 0 auto;
   min-width: max-content;
-}
-
-.footer-column h4 {
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-}
-
-.footer-column h4,
-.footer-column {
   color: #86868b;
 }
 
-.footer-column ul {
+.world-column h2 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+  color: #86868b;
+}
+
+.world-column ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-column li {
+.world-column li {
   margin-bottom: 0.5rem;
   font-size: 0.77rem;
 }
 
-.footer-bottom {
-  align-self: center;
+@media (max-width: 572px) {
+
+  .world-column {
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .world-column h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .world-column li {
+    font-size: 1.25rem;
+    margin-bottom: 0.85rem;
+  }
+}
+
+footer {
   padding: 1rem;
+  text-align: center;
+}
+
+footer .copyright {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #494949;
 }

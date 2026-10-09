@@ -20,61 +20,68 @@
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Sashank Yalamanchili",
-  "alternateName": "Sash",
-  "url": "https://sashankyalamanchili.com",
-  "sameAs": [
-    "https://www.linkedin.com/in/sashankyalamanchili",
-    "https://www.youtube.com/shankyshow",
-    "https://mappstack.com",
-    "https://stackure.com",
-    "https://digitalrack.in",
-    "https://sashstack.com",
-    "https://essnt.co"
-  ],
-  "jobTitle": "Enterprise Integration Architect",
-  "image": "https://sashankyalamanchili.com/images/photo.jpg",
-  "description": "I like making things easy. In enterprise projects and everyday life. Enterprise integration architect, founder, builder applying radical simplicity across enterprise systems, SaaS products, health, clothing, books, and creative projects.",
-  "knowsAbout": [
-    "Enterprise Integration Architecture",
-    "B2B Platform Design",
-    "Enterprise AI Enablement",
-    "RAG Architecture",
-    "Solution Architecture",
-    "Composable Commerce",
-    "Go",
-    "PostgreSQL",
-    "IBM Sterling B2Bi"
-  ],
-  "alumniOf": [
+  "@graph": [
     {
-      "@type": "EducationalOrganization",
-      "name": "Western Michigan University"
+      "@type": "Person",
+      "@id": "https://sashankyalamanchili.com/#person",
+      "name": "Sashank Yalamanchili",
+      "alternateName": "Sash",
+      "url": "https://sashankyalamanchili.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/sashankyalamanchili",
+        "https://www.youtube.com/shankyshow"
+      ],
+      "jobTitle": "Enterprise Integration Architect",
+      "image": "https://sashankyalamanchili.com/images/photo.jpg",
+      "description": "I like making things easy. In enterprise projects and everyday life. Enterprise integration architect, founder, builder applying radical simplicity across enterprise systems, SaaS products, health, clothing, books, and creative projects.",
+      "knowsAbout": [
+        "Enterprise Integration Architecture",
+        "B2B Platform Design",
+        "Enterprise AI Enablement",
+        "RAG Architecture",
+        "Solution Architecture",
+        "Composable Commerce",
+        "Go",
+        "PostgreSQL",
+        "IBM Sterling B2Bi"
+      ],
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Western Michigan University"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "JNTU Hyderabad"
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Claude Certified Architect",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": { "@type": "Organization", "name": "Anthropic" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Enterprise Architecture Essentials",
+          "credentialCategory": "Professional Certification"
+        }
+      ],
+      "nationality": [
+        { "@type": "Country", "name": "India" },
+        { "@type": "Country", "name": "Australia" }
+      ],
+      "knowsLanguage": ["English", "German", "Spanish"]
     },
     {
-      "@type": "EducationalOrganization",
-      "name": "JNTU Hyderabad"
+      "@type": "Organization",
+      "@id": "https://mappstack.com/#organization",
+      "name": "Mappstack",
+      "url": "https://mappstack.com/",
+      "founder": { "@id": "https://sashankyalamanchili.com/#person" }
     }
-  ],
-  "hasCredential": [
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Claude Certified Architect",
-      "credentialCategory": "Professional Certification",
-      "recognizedBy": { "@type": "Organization", "name": "Anthropic" }
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Enterprise Architecture Essentials",
-      "credentialCategory": "Professional Certification"
-    }
-  ],
-  "nationality": [
-    { "@type": "Country", "name": "India" },
-    { "@type": "Country", "name": "Australia" }
-  ],
-  "knowsLanguage": ["English", "German", "Spanish"]
+  ]
 }
 </script>
 </head>
@@ -134,6 +141,7 @@
             <div class="world-column">
                 <h2>Ventures</h2>
                 <ul>
+                    <li><a href="https://mappstack.com" target="_blank" rel="noopener noreferrer">Mappstack</a></li>
                     <li><a href="https://digitalrack.in" target="_blank" rel="noopener noreferrer">Digitalrack</a></li>
                     <li><a href="https://sashstack.com" target="_blank" rel="noopener noreferrer">Sashstack</a></li>
                     <li><a href="https://essnt.co" target="_blank" rel="noopener noreferrer">Essnt</a></li>
@@ -142,7 +150,6 @@
             <div class="world-column">
                 <h2>Products</h2>
                 <ul>
-                    <li><a href="https://mappstack.com" target="_blank" rel="noopener noreferrer">Mappstack</a></li>
                     <li><a href="https://stackure.com" target="_blank" rel="noopener noreferrer">Stackure</a></li>
                     <li>Selfsync</li>
                 </ul>

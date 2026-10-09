@@ -22,68 +22,75 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Sashank Yalamanchili",
-  "alternateName": "Sash",
-  "url": "https://sashankyalamanchili.com",
-  "sameAs": [
-    "https://www.linkedin.com/in/sashankyalamanchili",
-    "https://www.youtube.com/shankyshow",
-    "https://mappstack.com",
-    "https://stackure.com",
-    "https://digitalrack.in",
-    "https://sashstack.com",
-    "https://essnt.co"
-  ],
-  "jobTitle": "Enterprise Integration Architect",
-  "image": "https://sashankyalamanchili.com/images/photo.jpg",
-  "description": "Enterprise Integration Architect with 15 years designing how complex systems talk to each other. B2B platform design, middleware migration, composable commerce, and enterprise AI enablement.",
-  "knowsAbout": [
-    "Enterprise Integration Architecture",
-    "B2B Platform Design",
-    "Enterprise AI Enablement",
-    "RAG Architecture",
-    "Solution Architecture",
-    "Composable Commerce",
-    "MACH Architecture",
-    "IBM Sterling B2Bi",
-    "Go",
-    "PostgreSQL",
-    "Middleware Migration",
-    "Event-Driven Architecture",
-    "EDI",
-    "Azure",
-    "AWS"
-  ],
-  "alumniOf": [
+  "@graph": [
     {
-      "@type": "EducationalOrganization",
-      "name": "Western Michigan University"
+      "@type": "Person",
+      "@id": "https://sashankyalamanchili.com/#person",
+      "name": "Sashank Yalamanchili",
+      "alternateName": "Sash",
+      "url": "https://sashankyalamanchili.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/sashankyalamanchili",
+        "https://www.youtube.com/shankyshow"
+      ],
+      "jobTitle": "Enterprise Integration Architect",
+      "image": "https://sashankyalamanchili.com/images/photo.jpg",
+      "description": "Enterprise Integration Architect with 15 years designing how complex systems talk to each other. B2B platform design, middleware migration, composable commerce, and enterprise AI enablement.",
+      "knowsAbout": [
+        "Enterprise Integration Architecture",
+        "B2B Platform Design",
+        "Enterprise AI Enablement",
+        "RAG Architecture",
+        "Solution Architecture",
+        "Composable Commerce",
+        "MACH Architecture",
+        "IBM Sterling B2Bi",
+        "Go",
+        "PostgreSQL",
+        "Middleware Migration",
+        "Event-Driven Architecture",
+        "EDI",
+        "Azure",
+        "AWS"
+      ],
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Western Michigan University"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "JNTU Hyderabad"
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Claude Certified Architect",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": { "@type": "Organization", "name": "Anthropic" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Enterprise Architecture Essentials",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": { "@type": "Organization", "name": "Fragile to Agile (Asia Pac) Pty Ltd" }
+        }
+      ],
+      "nationality": [
+        { "@type": "Country", "name": "India" },
+        { "@type": "Country", "name": "Australia" }
+      ],
+      "knowsLanguage": ["English", "German", "Spanish"]
     },
     {
-      "@type": "EducationalOrganization",
-      "name": "JNTU Hyderabad"
+      "@type": "Organization",
+      "@id": "https://mappstack.com/#organization",
+      "name": "Mappstack",
+      "url": "https://mappstack.com/",
+      "founder": { "@id": "https://sashankyalamanchili.com/#person" }
     }
-  ],
-  "hasCredential": [
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Claude Certified Architect",
-      "credentialCategory": "Professional Certification",
-      "recognizedBy": { "@type": "Organization", "name": "Anthropic" }
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Enterprise Architecture Essentials",
-      "credentialCategory": "Professional Certification",
-      "recognizedBy": { "@type": "Organization", "name": "Fragile to Agile (Asia Pac) Pty Ltd" }
-    }
-  ],
-  "nationality": [
-    { "@type": "Country", "name": "India" },
-    { "@type": "Country", "name": "Australia" }
-  ],
-  "knowsLanguage": ["English", "German", "Spanish"]
+  ]
 }
 </script>
 </head>
@@ -307,12 +314,12 @@
           <div class="experience-item">
             <div class="experience-content">
               <h3 class="experience-title">Founder</h3>
-              <p class="experience-company">Mappstack LLC</p>
-              <span class="experience-location">🇺🇸 Delaware, USA</span>
+              <p class="experience-company">Mappstack</p>
+              <span class="experience-location">🇦🇺 Adelaide, Australia</span>
               <p class="experience-description">
-                Designed a no-code data mapping SaaS platform to compete with IBM Sterling, Boomi, and Mulesoft.
-                Modular service-oriented architecture on AWS with pay-as-you-go infrastructure. Self-explanatory
-                GUI designed for non-technical users.
+                Software services company that designs, builds and evolves complex software systems end to end.
+                Every system is mapped first. AI builds from the map, and every build is checked against it.
+                Mappstack is a business name of SY Innovations Pty Ltd.
               </p>
               <a href="https://mappstack.com/" target="_blank" class="experience-link">
                 See Mappstack

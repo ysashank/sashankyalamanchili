@@ -1,0 +1,14 @@
+# Sashank Yalamanchili
+
+> Solution Architect with 16 years of experience.
+
+Sashank Yalamanchili, called Sash, is a Solution Architect with 16 years of experience in B2B platforms, legacy modernization, composable commerce and enterprise AI. He lives in Berlin, Germany and Adelaide, Australia. His skills span solution and enterprise architecture, enterprise integration, composable commerce and MACH, event-driven architecture, legacy modernization and enterprise AI, with Go, Python, TypeScript, Java, PostgreSQL, AWS and Azure. He built Stackure, passwordless auth for B2B apps, from the ground up, from architecture through production. He holds a Master's in Engineering Management from Western Michigan University, a Bachelor's in Electronics and Communications Engineering from JNTU Hyderabad and the Enterprise Architecture Essentials certification from Fragile to Agile. Whatever it is, he's a message away on LinkedIn.
+
+## Pages
+
+- [Home](https://sashankyalamanchili.com/): a short introduction and lists of ventures, products, apps, daily practice, books and fun.
+- [Profile](https://sashankyalamanchili.com/profile/): who he is, skills, experience and qualifications.
+
+## Contact
+
+- [LinkedIn](https://www.linkedin.com/in/sashankyalamanchili): the only way to reach him. Whatever it is, he's a message away.

@@ -169,6 +169,14 @@ a:hover {
   }
 }
 
+.hero-intro {
+  max-width: 36rem;
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #86868b;
+}
+
 /* Skills section styles */
 
 .skills-section {
